@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">ChefGo</string>
+    <string name="title_activity_login">Sign in</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="com_auth0_client_id">5HJZzxVy7patcjpM9Alhh70nZ7lUp8PM</string>
+    <string name="com_auth0_domain">dev-0459bius.auth0.com</string>
+    <string name="title_activity_users">UsersActivity</string>
+    <string name="title_activity_customer_maps">Map</string>
+    <string name="title_activity_chat">ChatActivity</string>
+    <string name="order_history_adapt">Meal</string>
+    <string name="title_activity_lo">Map</string>
+</resources>

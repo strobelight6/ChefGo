@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CustomerClient.CustomerSeeChefProfile">
+
+    <TextView
+        android:id="@+id/nameView"
+        android:layout_width="225dp"
+        android:layout_height="50dp"
+        android:text=""
+        android:textSize="25sp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        tools:layout_editor_absoluteX="500dp"
+        tools:layout_editor_absoluteY="500dp" />
+    <ImageView
+        android:id="@+id/picView"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp" />
+    <RatingBar
+        android:id="@+id/ratingBar"
+        android:layout_width="225dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/nameView"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp" />
+    <TextView
+        android:id="@+id/menuText"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@id/picView"
+        android:layout_marginTop="10dp"
+        android:text="Menu"
+        android:textAlignment="center"
+        android:textSize="30sp"/>
+    <ListView
+        android:id="@+id/menuList"
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
+        android:layout_below="@id/menuText"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"/>
+    <TextView
+        android:id="@+id/reviewText"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@id/menuList"
+        android:layout_marginTop="10dp"
+        android:text="Reviews"
+        android:textAlignment="center"
+        android:textSize="30sp"/>
+    <ListView
+        android:id="@+id/reviewsList"
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
+        android:layout_below="@id/reviewText"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"/>
+</RelativeLayout>

@@ -1,0 +1,73 @@
+create table Users(
+fname varchar(20),
+lname varchar(30),
+username varchar(30),
+password varchar(30),
+photo blob,
+user_type_flag int,
+rating float not null check(rating between 0 and 5),
+address varchar(40),
+state varchar(20),
+zip int,
+primary key(username));
+
+
+
+create table Menu(
+Dish_Name varchar(50),
+cost float,
+Description varchar(200),
+chefname varchar(30),
+primary key(chefname),
+Foreign key(chefname) references Users(username)
+);
+
+create table Allergies( 
+aType varchar(40),
+users_name varchar(30),
+primary key(users_name) references Users(username)
+);
+
+
+create table Reviews(
+
+rid int NOT NULL UNIQUE AUTO-Increment,
+
+rating float not null check(rating between 0 and 5),
+
+rdescription varchar(300),
+
+reviewDate date,
+
+reviewer varchar(30),
+
+reviewee varchar(30),
+
+primary key(reviewer, reviewee,rid),
+
+Foreign Key(reviewer) references Users(username),
+
+Foreign Key(reviewee) references Users(username)
+);
+
+
+create table Order_History(
+
+price float,
+
+orderDate date,
+
+oid int NOT NULL unique AUTO-Increment,
+
+rid int NOT NULL unique AUTO-Increment,
+
+DishName varchar(50),
+
+chefName varchar(60),
+
+customerName varchar(60),
+
+primary key(oid,rid),
+
+Foreign Key(rid)references Reviews(rid)
+);

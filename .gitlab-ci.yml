@@ -1,0 +1,86 @@
+# Stages of pipeline, should match with stage tag inside each job.
+# Each stages executes in sequence, if previous job fails, then all the preceeding jobs are skipped.
+stages:
+  - mavenbuild
+  - maventest
+  - autodeploy
+  - androidbuild
+  - androidtest
+
+
+# tags: "shell" should match with the tag name provided to runner, for spring runner should execute in shell.
+# Notice that in petclinic project, the spring project is in root of master, if yours is in folder then cd to that folder.
+android-build:
+  image: javiersantos/android-ci:latest
+  stage: androidbuild
+  before_script:
+    - export GRADLE_USER_HOME=`pwd`/.gradle
+    - chmod +x ./Frontend/gradlew
+  tags:
+   - android_tag
+  script:
+    - cd Frontend
+    - ./gradlew assemble
+  artifacts:
+    paths:
+    - Frontend/app/build/outputs/
+  only:
+  - master
+
+unitTests:
+  image: javiersantos/android-ci:latest
+  stage: androidtest
+  before_script:
+    - export GRADLE_USER_HOME=`pwd`/.gradle
+    - chmod +x ./Frontend/gradlew
+  tags:
+   - android_tag
+  script:
+    - cd Frontend
+    - ./gradlew test
+  only:
+  - master
+
+
+maven-build:
+  stage: mavenbuild
+  tags:
+    - springboot_tag
+  script:
+    - cd Backend/SpringBoot/demo-1/
+    - mvn package -B
+  only:
+  - master
+  
+# artifacts are created when job executes successfully, and can be manually downloaded from GitLab GUI.
+# artifacts are not mandatory, buts it good practice, in case auto deploy fails, you can manually download the jar.
+maven-test:
+  stage: maventest
+  tags:
+    - springboot_tag
+  script:
+    - cd Backend/SpringBoot/demo-1/
+    - mvn test
+  artifacts:
+    paths:
+      - Backend/SpringBoot/demo-1/target/*.jar
+  only:
+  - master
+# Below stage builds, deploys and executes the jar as service.
+# Make sure there is /target directory in your server, else script will fail, or use any other folder you like.
+# If you are changing the folder, reflect the change in systemd-web-demo service too.
+autoDeploy:
+  stage: autodeploy
+  tags:
+   - springboot_tag
+  script:
+    - cd Backend/SpringBoot/demo-1/
+    - mvn package
+    - sudo mv target/*.jar /target/demo-1-0.0.1-SNAPSHOT.jar
+    - sudo systemctl stop chefgo
+    - sudo systemctl start chefgo
+  only:
+  - master
+
+    
+

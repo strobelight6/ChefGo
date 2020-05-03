@@ -1,0 +1,16 @@
+Name: ChefGo
+
+Description:
+
+Many people want to avoid fast food to maintain a healthy diet, but they face several dilemmas.
+Deterrents include not having the ingredients to cook, not knowing how to cook, and not having the motivation to cook.
+Our application will aim to solve this problem by providing a platform on which users can request someone to cook for them or offer to cook for others.
+Users will be able to create their own accounts.
+These accounts will be used to request or offer a meal.
+When requesting or offering, the user will be able to specify what they will be serving/what they want served, if they are willing to pay for the ingredients, and any allergies or dietary restrictions.
+A chat function can be used after a customer and cook have connected in case either has any questions or concerns for the other.
+A satisfaction system similar to Uber can be implemented through which the users will rate each other.
+These ratings will then be visible to other users, so they can determine whether they want to accept a meal.
+There will be a profile page that can be edited to display photos of yourself, photos of meals you have made, and details such as dietary restrictions.
+The main page will be where users will request/offer meals and be able see the requests or offers in their area.
+There will also be another page to apply to be a chef so moderators can decide if the applicant is fit to cook for people.

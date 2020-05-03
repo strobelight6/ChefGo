@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CustomerClient.CustomerReviewOrder">
+
+    <TextView
+        android:id="@+id/reviewOrderTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:textSize="50sp"
+        android:text="Review Order" />
+
+    <TextView
+        android:id="@+id/orderDescriptionTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/reviewOrderTitle"
+        android:layout_centerHorizontal="true"
+        android:textSize="25sp"
+        android:text="Order description"/>
+
+    <TextView
+        android:id="@+id/orderDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/orderDescriptionTitle"
+        android:layout_centerHorizontal="true"
+        android:textSize="20sp" />
+
+    <RatingBar
+        android:id="@+id/reviewOrderRB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/orderDescription"
+        android:layout_centerHorizontal="true"
+        android:numStars="5" />
+
+    <EditText
+        android:id="@+id/reviewBox"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/reviewOrderRB"
+        android:hint="Write review here..."
+        android:layout_centerHorizontal="true"
+        android:inputType="textMultiLine"
+        android:lines="4"
+        android:gravity="top|left"
+        android:scrollbars="vertical" />
+
+    <Button
+        android:id="@+id/submitReview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/reviewBox"
+        android:text="Submit"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>
