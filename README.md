@@ -10,5 +10,5 @@
 
 ### Well, CHEFGO order youself a cook!
 
-### open with android device# ChefGo
+### open with android device
 
