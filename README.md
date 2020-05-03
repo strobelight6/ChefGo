@@ -1,4 +1,8 @@
 # SB_3
+
+#### Group Project for COM S 309
+#### Written by Joseph Strobel, Allan Juarez, Carter Wunsch, Karthik Prakash
+
 ## CHEFGOOOOOOOOOOO
 
 ### Need a home cooked meal?
@@ -7,3 +11,4 @@
 ### Well, CHEFGO order youself a cook!
 
 ### open with android device# ChefGo
+
